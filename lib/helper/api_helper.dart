@@ -7,8 +7,10 @@ class APIHelper {
 
   static final APIHelper apiHelper = APIHelper._();
 
-  Future<List<Quote>?> fetchedQuote() async {
-    String api = "https://api.quotable.io/quotes?page=1";
+  String apiKey = "989a4495824248bfbb4d43051fb54cf0";
+
+  Future<List<News>?> fetchedQuote() async {
+    String api = "https://newsapi.org/v2/top-headlines/sources?apiKey=$apiKey";
 
     http.Response response = await http.get(Uri.parse(api));
 
@@ -17,14 +19,20 @@ class APIHelper {
 
       Map decodedData = jsonDecode(data);
 
-      List quotesData = decodedData['results'];
+      List news = decodedData['sources'];
 
-      return quotesData
-          .map((e) => Quote(
-                author: e['author'],
-                content: e['content'],
-                authorSlug: e['authorSlug'],
-              ))
+      return news
+          .map(
+            (e) => News(
+              id: e['id'],
+              name: e['name'],
+              description: e['description'],
+              url: e['url'],
+              category: e['category'],
+              language: e['language'],
+              country: e['country'],
+            ),
+          )
           .toList();
     }
     return null;
