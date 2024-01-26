@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quotes_api_app/helper/api_helper.dart';
-import 'package:quotes_api_app/models/quotes_model.dart';
+import 'package:quotes_api_app/models/news_model.dart';
 import 'package:quotes_api_app/view/detail_page.dart';
 
 class Home_Page extends StatefulWidget {
