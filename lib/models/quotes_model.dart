@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class News {
   final String id;
   final String name;
@@ -28,4 +30,16 @@ class News {
       country: json['country'],
     );
   }
+}
+
+class Favouritemodel {
+  String title;
+  String url;
+
+  Favouritemodel({required this.title, required this.url});
+}
+
+class TextControllerModel {
+  TextEditingController titleTxt = TextEditingController();
+  TextControllerModel({required this.titleTxt});
 }

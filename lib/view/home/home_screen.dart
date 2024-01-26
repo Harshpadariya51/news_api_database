@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:quotes_api_app/helper/api_helper.dart';
 import 'package:quotes_api_app/models/quotes_model.dart';
+import 'package:quotes_api_app/view/detail_page.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Home_Page extends StatefulWidget {
+  const Home_Page({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Home_Page> createState() => _Home_PageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _Home_PageState extends State<Home_Page> {
   @override
   void initState() {
     super.initState();
@@ -37,10 +38,10 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       child: Scaffold(
-        backgroundColor: Colors.white.withOpacity(0.8),
         appBar: AppBar(
+          backgroundColor: const Color(0xffF24B4B),
           title: const Text(
-            "News App",
+            "News ",
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -48,9 +49,29 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           centerTitle: true,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: PopupMenuButton(
+                shape: const OutlineInputBorder(),
+                color: const Color(0xffF2F2F2),
+                child: const Icon(Icons.favorite),
+                itemBuilder: (context) {
+                  return <PopupMenuEntry>[
+                    PopupMenuItem(
+                      child: const Text("Favourite"),
+                      onTap: () {
+                        Navigator.of(context).pushNamed("favourite_page");
+                      },
+                    ),
+                  ];
+                },
+              ),
+            ),
+          ],
         ),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(left: 8, right: 8),
           child: Column(
             children: [
               Expanded(
@@ -70,61 +91,84 @@ class _HomePageState extends State<HomePage> {
                         : GridView(
                             gridDelegate:
                                 const SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 2,
-                                    mainAxisSpacing: 2,
+                                    crossAxisCount: 1,
+                                    mainAxisSpacing: 8,
                                     crossAxisSpacing: 1,
-                                    childAspectRatio: 2 / 2.5),
+                                    childAspectRatio: 5 / 4),
                             children: data
                                 .map(
                                   (e) => InkWell(
                                     onTap: () {
-                                      Navigator.of(context)
-                                          .pushNamed('detal_page');
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              detal_page(url: e.url),
+                                        ),
+                                      );
+                                      // Navigator.of(context).pushNamed(
+                                      //     'detal_page',
+                                      //     arguments: e);
                                     },
                                     child: Card(
+                                      color: const Color(0xffF2F2F2),
                                       elevation: 10,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(8),
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(25),
-                                        ),
-                                        alignment: Alignment.bottomCenter,
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(
-                                              e.name,
-                                              style: const TextStyle(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold),
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            flex: 2,
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(10),
+                                              child: Column(
+                                                children: [
+                                                  Text(
+                                                    e.name,
+                                                    style: const TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 18),
+                                                  ),
+                                                  Text(e.category),
+                                                  Container(
+                                                    margin:
+                                                        const EdgeInsets.all(8),
+                                                    height: 2,
+                                                    color: Colors.black26,
+                                                  ),
+                                                  Text(e.description),
+                                                ],
+                                              ),
                                             ),
-                                            const Spacer(),
-                                            Text(
-                                              e.id,
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  const TextStyle(fontSize: 17),
-                                            ),
-                                            const Spacer(),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Text(
-                                                  e.category,
-                                                  style: const TextStyle(
-                                                      fontSize: 18,
-                                                      fontWeight:
-                                                          FontWeight.w100),
+                                          ),
+                                          Column(
+                                            children: [
+                                              Container(
+                                                height: 25,
+                                                width: 25,
+                                                decoration: const BoxDecoration(
+                                                  color: Color(0xffF24B4B),
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                    bottomLeft: Radius.circular(
+                                                      10,
+                                                    ),
+                                                    topRight:
+                                                        Radius.circular(10),
+                                                  ),
                                                 ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
+                                                child: Center(
+                                                  child: Text(
+                                                    e.country,
+                                                    style: const TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 13),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
