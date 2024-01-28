@@ -69,6 +69,142 @@ class _Home_PageState extends State<Home_Page> {
               ),
             ),
           ],
+          // leading: Drawer(),
+        ),
+        drawer: NavigationDrawer(
+          backgroundColor: const Color(0xffF2F2F2),
+          children: [
+            Container(
+              height: 180,
+              width: double.infinity,
+              color: const Color(0xffF24B4B),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(10),
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: const Image(
+                        image: NetworkImage(
+                            "https://lh3.googleusercontent.com/a/ACg8ocKcbU0ZYDSMrRbt-vGIq1ksvZ-ZSCR9GmigW1iaLRGZChM=s96-c-rg-br100")),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 10),
+                    child: Text(
+                      "Harsh Padariya",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 10),
+                    child: Text("padariyaharsh06@mail.com"),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Home",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(
+                    Icons.home,
+                    size: 22,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "About",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(
+                    Icons.error,
+                    size: 22,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Reading history",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(Icons.access_time_filled, size: 22),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Notification",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(Icons.notifications_active, size: 22),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Settings",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(Icons.settings, size: 22),
+                ],
+              ),
+            ),
+            const SizedBox(height: 300),
+            Container(
+              height: 50,
+              color: const Color(0xffF24B4B),
+              child: const Center(
+                  child: Text(
+                "Log out",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              )),
+            ),
+          ],
         ),
         body: Padding(
           padding: const EdgeInsets.only(left: 8, right: 8),
@@ -162,7 +298,8 @@ class _Home_PageState extends State<Home_Page> {
                                                     style: const TextStyle(
                                                         fontWeight:
                                                             FontWeight.bold,
-                                                        fontSize: 13),
+                                                        fontSize: 13,
+                                                        color: Colors.white),
                                                   ),
                                                 ),
                                               ),
