@@ -1,5 +1,9 @@
 
 
+https://github.com/Harshpadariya51/News_Apps/assets/135210889/3a4929e0-7c2f-4b33-a785-9a5e8779f2f2
+
+
+
 
 # quotes_api_app
 
