@@ -16,9 +16,9 @@ https://github.com/Harshpadariya51/News_Apps/assets/135210889/3a4929e0-7c2f-4b33
 
 
 
-# quotes_api_app
+# News App
 
-quotes api application....
+News App application....
 
 ## Getting Started
 
