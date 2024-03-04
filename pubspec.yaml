@@ -39,6 +39,10 @@ dependencies:
   provider:
   http:
   flutter_inappwebview:
+  sqflite:
+  path:
+  get:
+  path_provider:
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:provider/provider.dart';
-import 'package:quotes_api_app/provider/news_provider.dart';
+import 'package:quotes_api_app/module/provider/news_provider.dart';
 
 class detal_page extends StatelessWidget {
   final String url;
@@ -14,7 +14,8 @@ class detal_page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xffF24B4B),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
         title: const Text(
           "Web View",
           style: TextStyle(fontWeight: FontWeight.bold),

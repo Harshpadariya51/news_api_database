@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quotes_api_app/provider/news_provider.dart';
-import 'package:quotes_api_app/view/favourite_page.dart';
-import 'package:quotes_api_app/view/home/home_screen.dart';
-import 'package:quotes_api_app/view/home/splash_screen.dart';
+import 'package:quotes_api_app/module/provider/news_provider.dart';
+import 'package:quotes_api_app/module/view/favourite_page.dart';
+import 'package:quotes_api_app/module/view/home/home_screen.dart';
+import 'package:quotes_api_app/module/view/home/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => const Home_Page(),
           // 'detal_page': (context) => const detal_page(),
-          'favourite_page': (context) => const favourite_page(),
+          'favourite_page': (context) => FavoriteScreen(),
           'splash_screen': (context) => const splash_screen(),
         },
       ),

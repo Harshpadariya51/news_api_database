@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:quotes_api_app/models/news_model.dart';
-import 'package:quotes_api_app/view/favourite_page.dart';
+import 'package:quotes_api_app/module/models/news_model.dart';
 
 class newsprovider extends ChangeNotifier {
   late InAppWebViewController _webViewController;

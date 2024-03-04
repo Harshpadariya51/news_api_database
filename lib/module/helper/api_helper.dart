@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:quotes_api_app/models/news_model.dart';
+import 'package:quotes_api_app/module/models/news_model.dart';
 
 class APIHelper {
   APIHelper._();

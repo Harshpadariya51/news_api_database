@@ -20,12 +20,12 @@ class _splash_screenState extends State<splash_screen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        child: const Image(
-          image: AssetImage('assets/img/splash.png'),
-          fit: BoxFit.cover,
+      body: Center(
+        child: Container(
+          child: const Image(
+            image: AssetImage('assets/img/news-icon.png'),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
